@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Sample Screen</h2>
+<table>
+    <tr>
+        <td>
+            <input id="textvalue" type="text">
+        </td>
+        <td>
+            <input id="them" type="button" value="Add" onclick="addelement()">
+        </td>
+        <td>
+            <input id="hienthi" type="button" value="Display" onclick="displayarr()">
+        </td>
+    </tr>
+    <div id="result"></div>
+</table>
+<script>
+    let x = 0;
+    let array = Array();
+    function addelement() {
+      array[x] = document.getElementById("them").value
+        alert("Element: " + array[x] + "Added at index" + x);
+      x++;
+      document.getElementById("them").value = "";
+    }
+
+    function displayarr() {
+        let e = "<hr/>";
+        for (i = 0; i< array.length; i++){
+            e += "Elenment" + i + "=" + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+
+    }
+</script>
+</body>
+</html>
